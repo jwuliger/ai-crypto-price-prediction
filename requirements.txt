@@ -1,0 +1,5 @@
+ccxt
+numpy
+joblib
+tensorflow
+scikit-learn

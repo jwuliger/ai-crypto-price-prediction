@@ -1,0 +1,17 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none",
+    "cSpell.words": [
+        "ccxt",
+        "joblib",
+        "keras",
+        "lookback",
+        "ohlcv",
+        "padx",
+        "pady",
+        "relu",
+        "sklearn"
+    ]
+}
