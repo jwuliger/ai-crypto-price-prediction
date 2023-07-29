@@ -15,7 +15,7 @@ model_name_template = '{}_{}_model.h5'
 scaler_name_template = '{}_{}_scaler.pkl'
 interval_time = 90000  # in ms
 symbol_options = ['BTC/USDT', 'ETH/USDT', 'LTC/USDT',
-                  'ADA/USDT', 'XRP/USDT', 'MATIC/USDT', 'AGIX/USDT', 'BNB/USDT']
+                  'ADA/USDT', 'XRP/USDT', 'MATIC/USDT', 'AGIX/USDT', 'BNB/USDT', 'DOT/USDT']
 time_frame_options = ['5m', '15m', '1h', '4h', '1d']
 
 # Default symbol and time frame
@@ -107,10 +107,10 @@ def update_prediction():
     actual_price = exchange.fetch_ohlcv(symbol, time_frame, limit=2)[-1][4]
     if next_price > prices[-1]:
         root.after(0, lambda: predicted_price_label.configure(
-            text=f"The predicted price for the next {time_frame} is: ${next_price:,.2f} \u2191"))
+            text=f"The predicted price for the next {time_frame} is: ${next_price:,.5f} \u2191"))
     else:
         root.after(0, lambda: predicted_price_label.configure(
-            text=f"The predicted price for the next {time_frame} is: ${next_price:,.2f} \u2193"))
+            text=f"The predicted price for the next {time_frame} is: ${next_price:,.5f} \u2193"))
     prices = np.append(prices, actual_price)
 
     scheduled_prediction_update_id = root.after(
